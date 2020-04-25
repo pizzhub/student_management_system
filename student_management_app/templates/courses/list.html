@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+List Course
+{% endblock title %}
+{% block header_title %}
+Manage Course
+{% endblock header_title %}
+{% block breadcrumb %}
+List
+{% endblock breadcrumb %}
+{% block content %}
+<!-- Main content -->
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <!-- general form elements -->
+                <div class="card card-primary">
+                    <div class="card-header">
+                        <h3 class="card-title">List Course</h3>
+                    </div>
+                </div>
+                <!-- /.card -->
+	            <div class="card-body table-responsive p-0">
+                <table class="table table-hover text-nowrap">
+                  <thead>
+                    <tr>
+                        <th>ID</th>
+	                    <th>Name</th>
+	                    <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {% for course in courses %}
+                    <tr>
+	                    <td>{{course.id}}</td>
+	                    <td>{{course.course_name}}</td>
+	                    <td>
+		                    <a href="/edit_course/{{course.id}}" class="btn btn-success">Edit</a>
+<!--		                    <a href="/delete_staff/{{staff.admin.id}}" class="btn btn-danger">Delete</a>-->
+	                    </td>
+                    </tr>
+                    {% endfor %}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+        </div>
+    </div>
+    <!-- /.container-fluid -->
+</section>
+<!-- /.content -->
+{% endblock content %}
