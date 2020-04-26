@@ -11,7 +11,7 @@ from .forms import AddStudentForm, EditStudentForm
 
 
 def Dashboard(request):
-    return render(request, 'dashboard.html')
+    return render(request, 'admin.html')
 
 
 def AddStaff(request):

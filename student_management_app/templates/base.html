@@ -35,7 +35,15 @@
             {% include 'partials/header.html' %}
             <!-- /.navbar -->
             <!-- Main Sidebar Container -->
-            {% include 'partials/sidebar.html' with user=user id=id %}
+            {% if user.user_type == "1" %}
+                {% include 'partials/sidebar.html' with user=user id=id %}
+            {% endif %}
+            {% if user.user_type == "2" %}
+                {% include 'partials/sidebar_staff.html' with user=user id=id %}
+            {% endif %}
+            {% if user.user_type == "3" %}
+                {% include 'partials/sidebar_student.html' with user=user id=id %}
+            {% endif %}
             <!-- Content Wrapper. Contains page content -->
             <div class="content-wrapper">
                 <!-- Content Header (Page header) -->

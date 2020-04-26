@@ -24,7 +24,12 @@ def doLogin(request):
         user = EmailBackEnd.authenticate(request, username=email, password=password)
         if user is not None:
             login(request, user)
-            return HttpResponseRedirect('/dashboard')
+            if user.user_type == "1":
+                return HttpResponseRedirect(reverse('dashboard'))
+            elif user.user_type == "2":
+                return HttpResponseRedirect(reverse("staff_admin"))
+            elif user.user_type == "3":
+                return HttpResponseRedirect(reverse("student_admin"))
         else:
             messages.error(request, "Invalid Email Or Password, Please try again!")
             return HttpResponseRedirect("/login")
