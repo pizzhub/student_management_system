@@ -16,7 +16,7 @@ distlib==0.3.0
 Django==3.0.2
 django-crispy-forms==1.8.1
 django-xhtml2pdf==0.0.4
-djangorestframework==3.11.0
+djangorestframework==3.11.2
 dnspython==1.16.0
 ez-setup==0.9
 filelock==3.0.12
